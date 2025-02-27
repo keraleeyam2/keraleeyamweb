@@ -12,17 +12,19 @@ export default function ActivitiesPage() {
     "cultural-events.jpg": "/placeholder.svg",
   });
 
-  useEffect(() => {
-    const fetchImages = async () => {
-      const newImages = { ...images };
-      for (const key of Object.keys(newImages)) {
-        const url = await getPublicImageUrl("activities", key);
-        if (url) newImages[key] = url;
-      }
-      setImages(newImages);
-    };
-    fetchImages();
-  }, []);
+// this line was used to fetch images from the supabase storage (not working)
+
+  // useEffect(() => {
+  //   const fetchImages = async () => {
+  //     const newImages = { ...images };
+  //     for (const key of Object.keys(newImages)) {
+  //       const url = await getPublicImageUrl("activities", key);
+  //       if (url) newImages[key] = url;
+  //     }
+  //     setImages(newImages);
+  //   };
+  //   fetchImages();
+  // }, []);
 
   return (
     <div className="bg-white">
