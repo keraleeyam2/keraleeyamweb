@@ -5,7 +5,6 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion"
-import Partners from "./Partners"
 
 export default function GetInvolved() {
   const [formData, setFormData] = useState({
@@ -128,8 +127,6 @@ export default function GetInvolved() {
             {errorMessage}
           </motion.div>
         )}
-
-        <Partners />
       </div>
     </section>
   )

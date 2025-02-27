@@ -1,7 +1,27 @@
-import Image from "next/image"
-import ImageGallery from "../components/ImageGallery"
+import { useState, useEffect } from "react";
+import Image from "next/image";
+import ImageGallery from "../components/ImageGallery";
+import { getPublicImageUrl } from "@/lib/supabaseClient";
 
 export default function ActivitiesPage() {
+  const [images, setImages] = useState<{ [key: string]: string }>({});
+
+  useEffect(() => {
+    const fetchImages = async () => {
+      const imageFiles = ["blood-donation.jpg", "food-truck.jpg", "cultural-events.jpg"];
+      const fetchedImages: { [key: string]: string } = {};
+
+      for (const file of imageFiles) {
+        const url = await getPublicImageUrl("activities", file);
+        fetchedImages[file] = url || "/placeholder.svg";
+      }
+
+      setImages(fetchedImages);
+    };
+
+    fetchImages();
+  }, []);
+
   return (
     <div className="bg-white">
       <div className="container mx-auto px-4">
@@ -20,7 +40,7 @@ export default function ActivitiesPage() {
               </div>
               <div className="md:col-span-7 relative aspect-[16/9] rounded-lg overflow-hidden">
                 <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/skillful-nurse-is-doing-blood-test-man-clinic-man-medical-mask.jpg-mJEY9SgCbEWevcSVvTFzrax3Enbsbd.jpeg"
+                  src={images["blood-donation.jpg"] || "/placeholder.svg"}
                   alt="Blood Donation"
                   fill
                   className="object-cover"
@@ -33,7 +53,12 @@ export default function ActivitiesPage() {
           <section className="mb-32">
             <div className="grid grid-cols-1 md:grid-cols-12 gap-16">
               <div className="md:col-span-7 relative aspect-[16/9] rounded-lg overflow-hidden order-2 md:order-1">
-                <Image src="/placeholder.svg?height=800&width=600" alt="Food Truck" fill className="object-cover" />
+                <Image
+                  src={images["food-truck.jpg"] || "/placeholder.svg"}
+                  alt="Food Truck"
+                  fill
+                  className="object-cover"
+                />
               </div>
               <div className="md:col-span-5 flex flex-col justify-center order-1 md:order-2">
                 <h2 className="text-4xl font-bold mb-6">Food Truck</h2>
@@ -57,7 +82,7 @@ export default function ActivitiesPage() {
               </div>
               <div className="md:col-span-7 relative aspect-[16/9] rounded-lg overflow-hidden">
                 <Image
-                  src="/placeholder.svg?height=800&width=600"
+                  src={images["cultural-events.jpg"] || "/placeholder.svg"}
                   alt="Cultural Events"
                   fill
                   className="object-cover"
@@ -71,6 +96,5 @@ export default function ActivitiesPage() {
         </div>
       </div>
     </div>
-  )
+  );
 }
-

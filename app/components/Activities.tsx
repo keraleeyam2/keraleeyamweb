@@ -1,30 +1,45 @@
-"use client"
+"use client";
 
-import { Card, CardContent } from "@/components/ui/card"
-import Image from "next/image"
-import Link from "next/link"
-import { motion } from "framer-motion"
+import { useEffect, useState } from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import Image from "next/image";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import { supabase } from "@/lib/supabaseClient";
 
-const activities = [
-  {
-    title: "Blood Donation",
-    image:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/skillful-nurse-is-doing-blood-test-man-clinic-man-medical-mask.jpg-mJEY9SgCbEWevcSVvTFzrax3Enbsbd.jpeg",
-    link: "/activities#blood-donation",
-  },
-  {
-    title: "Food Truck",
-    image: "/foodtruck.jpg",
-    link: "/activities#food-truck",
-  },
-  {
-    title: "Cultural Events",
-    image: "/placeholder.svg?height=600&width=400",
-    link: "/activities#cultural-events",
-  },
-]
+interface Activity {
+  title: string;
+  image: string;
+  link: string;
+}
 
 export default function Activities() {
+  const [activities, setActivities] = useState<Activity[]>([]);
+
+  useEffect(() => {
+    const fetchImages = async () => {
+      const activityData = [
+        { title: "Blood Donation", path: "blood-donation.jpg", link: "/activities#blood-donation" },
+        { title: "Food Truck", path: "foodtruck.jpg", link: "/activities#food-truck" },
+        { title: "Cultural Events", path: "cultural-events.jpg", link: "/activities#cultural-events" },
+      ];
+
+      const updatedActivities = await Promise.all(
+        activityData.map(async (activity) => {
+          const { data } = await supabase.storage
+            .from("activity-images") // Replace with your bucket name
+            .getPublicUrl(activity.path);
+
+          return { ...activity, image: data.publicUrl };
+        })
+      );
+
+      setActivities(updatedActivities);
+    };
+
+    fetchImages();
+  }, []);
+
   return (
     <section id="activities" className="py-15">
       <div className="container px-4">
@@ -65,7 +80,6 @@ export default function Activities() {
                         fill
                         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                         className="object-cover transition-transform duration-300 group-hover:scale-105"
-                        unoptimized={activity.image.startsWith("https://")}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end justify-center pb-6">
                         <h3 className="text-xl font-semibold text-white">{activity.title}</h3>
@@ -80,6 +94,5 @@ export default function Activities() {
         </div>
       </div>
     </section>
-  )
+  );
 }
-
