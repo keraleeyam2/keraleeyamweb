@@ -59,7 +59,7 @@ export default function Header() {
             height={40}
             className="w-10 h-10"
           />
-          <span className="text-2xl font-bold">Keraleeyam</span>
+          <span className="text-2xl ">Keraleeyam</span>
         </Link>
         <button className="md:hidden" onClick={toggleMenu}>
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}

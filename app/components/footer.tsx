@@ -14,7 +14,7 @@ export default function Footer() {
     <footer className="bg-white">
       <div className="container py-15">
         <div className="text-center">
-          <div className="text-xl font-bold mb-6">KERALEEYAM</div>
+          <div className="text-xl mb-6">KERALEEYAM</div>
           <nav className="mb-8">
             <ul className="flex justify-center gap-8">
               {socialLinks.map((link, index) => (

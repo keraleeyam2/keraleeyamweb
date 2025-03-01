@@ -60,7 +60,7 @@ export default function Hero() {
       <div className="absolute inset-0 flex flex-col justify-center items-center text-white">
         <div className="container text-center px-4">
           <motion.h1
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold mb-4 text-shadow-lg"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl mb-4 text-shadow-lg"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}

@@ -8,7 +8,7 @@ export default function AboutUs() {
   return (
     <div className="bg-white">
       <div className="container mx-auto px-4 py-15">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-16">About Us</h1>
+        <h1 className="text-3xl sm:text-4xl md:text-5xl text-center mb-16">About Us</h1>
         <div className="mb-8">
           <div className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] rounded-lg overflow-hidden">
             <Image

@@ -44,7 +44,7 @@ export default function Activities() {
     <section id="activities" className="py-15">
       <div className="container px-4">
         <motion.h2
-          className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-4"
+          className="text-3xl sm:text-4xl md:text-5xl text-center mb-4"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}

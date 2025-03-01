@@ -62,44 +62,54 @@ export default function ActivitiesPage() {
   return (
     <div className="bg-white py-16">
       <div className="container mx-auto px-4">
-        <h1 className="text-5xl font-bold text-center mb-20">Our Activities</h1>
+        <h1 className="text-5xl text-center mb-20">Our Activities</h1>
 
         {/* Blood Donation Section */}
-        <section id="blood-donation" className={`mb-24 ${activeSection === "blood-donation" ? "bg-gray-100 p-6 rounded-lg" : ""}`}>
+        <section id="blood-donation" className="mb-24">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-4xl font-bold mb-4">Blood Donation</h2>
+              <h2 className="text-4xl mb-4">Blood Donation</h2>
               <p className="text-xl text-gray-600">
                 Blood donation is a vital community service that saves lives. Our blood donation drives aim to
                 increase awareness and encourage regular donations from healthy individuals.
               </p>
             </div>
-            <div className="relative w-full h-80 rounded-lg overflow-hidden shadow-lg">
+            <div className="relative w-full h-80 rounded-md overflow-hidden" style={{ borderRadius: "8px" }}>
               {images["blood-donation"] ? (
-                <Image key={refresh.toString()} src={images["blood-donation"]} alt="Blood Donation" fill className="object-cover" />
+                <Image 
+                  key={refresh.toString()} 
+                  src={images["blood-donation"]} 
+                  alt="Blood Donation" 
+                  fill 
+                  className="object-cover" 
+                  style={{ borderRadius: "8px" }}
+                />
               ) : (
-                <div className="w-full h-full bg-gray-200 animate-pulse" />
+                <div className="w-full h-full bg-gray-200 animate-pulse" style={{ borderRadius: "8px" }} />
               )}
             </div>
           </div>
         </section>
 
         {/* Food Truck Section */}
-        <section id="food-truck" className={`mb-24 ${activeSection === "food-truck" ? "bg-gray-100 p-6 rounded-lg" : ""}`}>
-          
+        <section id="food-truck" className="mb-24">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="relative w-full h-80 rounded-lg overflow-hidden shadow-lg">
-              
-            <Image 
-              src="https://xfmdckbmohponiwalvli.supabase.co/storage/v1/object/public/activity-images//foodtruck.jpg" 
-              alt="Food Truck" 
-              fill 
-              className="object-cover" 
-            />
-
+            <div className="relative w-full h-80 rounded-md overflow-hidden" style={{ borderRadius: "8px" }}>
+              {images["food-truck"] ? (
+                <Image 
+                  key={refresh.toString()} 
+                  src={images["food-truck"]} 
+                  alt="Food Truck" 
+                  fill 
+                  className="object-cover" 
+                  style={{ borderRadius: "8px" }}
+                />
+              ) : (
+                <div className="w-full h-full bg-gray-200 animate-pulse" style={{ borderRadius: "8px" }} />
+              )}
             </div>
             <div>
-              <h2 className="text-4xl font-bold mb-4">Food Truck</h2>
+              <h2 className="text-4xl mb-4">Food Truck</h2>
               <p className="text-xl text-gray-600">
                 Our Food Truck initiative brings delicious, locally-sourced meals to various locations in the
                 community. We aim to promote local cuisine and provide convenient, quality food options.
@@ -109,20 +119,27 @@ export default function ActivitiesPage() {
         </section>
 
         {/* Cultural Events Section */}
-        <section id="cultural-events" className={`mb-24 ${activeSection === "cultural-events" ? "bg-gray-100 p-6 rounded-lg" : ""}`}>
+        <section id="cultural-events" className="mb-24">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-4xl font-bold mb-4">Cultural Events</h2>
+              <h2 className="text-4xl mb-4">Cultural Events</h2>
               <p className="text-xl text-gray-600">
                 Our Cultural Events showcase the rich heritage and traditions of Kerala. From music and dance
                 performances to art exhibitions, these events offer a vibrant celebration of our culture.
               </p>
             </div>
-            <div className="relative w-full h-80 rounded-lg overflow-hidden shadow-lg">
+            <div className="relative w-full h-80 rounded-md overflow-hidden" style={{ borderRadius: "8px" }}>
               {images["cultural-events"] ? (
-                <Image key={refresh.toString()} src={images["cultural-events"]} alt="Cultural Events" fill className="object-cover" />
+                <Image 
+                  key={refresh.toString()} 
+                  src={images["cultural-events"]} 
+                  alt="Cultural Events" 
+                  fill 
+                  className="object-cover" 
+                  style={{ borderRadius: "8px" }}
+                />
               ) : (
-                <div className="w-full h-full bg-gray-200 animate-pulse" />
+                <div className="w-full h-full bg-gray-200 animate-pulse" style={{ borderRadius: "8px" }} />
               )}
             </div>
           </div>

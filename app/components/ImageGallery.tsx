@@ -29,7 +29,7 @@ export default function ImageGallery() {
     <section className="py-20">
       <div className="container px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4">Image Gallery</h2>
+          <h2 className="text-3xl sm:text-4xl mb-4">Image Gallery</h2>
           <p className="text-lg sm:text-xl text-gray-600">
             Capturing moments that make a difference in our community.
           </p>

@@ -54,7 +54,7 @@ export default function TeamSection() {
   return (
     <section className="py-20 bg-white">
       <div className="container max-w-none px-4 md:px-6 lg:px-8">
-        <h2 className="text-3xl sm:text-4xl font-bold mb-4">Our team</h2>
+        <h2 className="text-3xl sm:text-4xl font mb-4">Our team</h2>
         <p className="text-lg text-gray-600 mb-16">Meet the amazing people behind our initiatives.</p>
 
         <div className="relative">

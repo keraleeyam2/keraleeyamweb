@@ -75,7 +75,7 @@ export default function Partners() {
       transition={{ duration: 0.8 }}
       viewport={{ once: true }}
     >
-      <h2 className="text-2xl font-bold text-center mb-8">Our Partners</h2>
+      <h2 className="text-2xl text-center mb-8">Our Partners</h2>
       <div ref={scrollerRef} className="scroller">
         <div ref={scrollerInnerRef} className="scroller__inner flex">
           {partners.map((partner, index) => (

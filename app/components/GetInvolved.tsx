@@ -46,7 +46,7 @@ export default function GetInvolved() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">Get Involved</h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl mb-4">Get Involved</h2>
           <p className="text-lg sm:text-xl text-gray-600 mb-12">
             Join us in our vibrant events and sharing culture now.
             <br className="hidden sm:inline" />
