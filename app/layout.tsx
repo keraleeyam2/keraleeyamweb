@@ -4,7 +4,8 @@ import './globals.css'
 import Header from './components/Header'
 import Footer from './components/footer'
 
-const montserrat = Montserrat({ subsets: ['latin'] })
+// Correct way to initialize Montserrat font
+const montserrat = Montserrat({ subsets: ['latin'], variable: '--font-montserrat' })
 
 export const metadata: Metadata = {
   title: 'Keraleeyam',
@@ -17,8 +18,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={`${montserrat.className} bg-white text-gray-900`}>
+    <html lang="en" className={montserrat.variable}>
+      <body className="bg-white text-gray-900 font-sans">
         <Header />
         <main>{children}</main>
         <Footer />
@@ -26,4 +27,3 @@ export default function RootLayout({
     </html>
   )
 }
-
