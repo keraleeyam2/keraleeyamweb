@@ -19,7 +19,7 @@ export default function ActivitiesPage() {
   const fetchImages = async () => {
     const imageFiles: Record<string, string> = {
       "blood-donation": "blood-donation.jpg",
-      "food-truck": "food-truck.jpg",
+      "food-truck": "foodtruck.jpg",
       "cultural-events": "cultural-events.jpg",
     };
 
@@ -91,7 +91,7 @@ export default function ActivitiesPage() {
             <div className="relative w-full h-80 rounded-lg overflow-hidden shadow-lg">
               
             <Image 
-              src="https://xfmdckbmohponiwalvli.supabase.co/storage/v1/object/public/activity-images//food-truck.jpg" 
+              src="https://xfmdckbmohponiwalvli.supabase.co/storage/v1/object/public/activity-images//foodtruck.jpg" 
               alt="Food Truck" 
               fill 
               className="object-cover" 

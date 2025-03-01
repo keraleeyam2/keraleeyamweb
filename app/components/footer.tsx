@@ -30,7 +30,7 @@ export default function Footer() {
             </ul>
           </nav>
           <p className="text-gray-600">
-            Copyright © 2023, Keraleeyam. All rights reserved.
+            Copyright © 2025, Keraleeyam. All rights reserved.
           </p>
         </div>
       </div>
