@@ -2,7 +2,7 @@ import Image from "next/image";
 import TeamSection from "../components/TeamSection";
 import { getPublicImageUrl } from "../../lib/supabaseClient";
 
-const imageUrl = getPublicImageUrl("about-us", "about-us-image.jpg"); 
+const imageUrl = "https://lfwraqlxvswwhdcwjuvz.supabase.co/storage/v1/object/public/about-us//about-us.jpg"; 
 
 export default function AboutUs() {
   return (
@@ -17,6 +17,7 @@ export default function AboutUs() {
               fill
               className="object-cover"
               priority
+              style={{ borderRadius: "10px" }}
             />
           </div>
         </div>
@@ -38,7 +39,7 @@ export default function AboutUs() {
         </div>
       </div>
 
-      <TeamSection />
+      {/* <TeamSection /> */}
     </div>
   );
 }

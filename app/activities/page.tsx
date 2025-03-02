@@ -5,15 +5,9 @@ import Image from "next/image";
 import ImageGallery from "../components/ImageGallery";
 import { getPublicImageUrl } from "@/lib/supabaseClient";
 
-// Fixed getPublicImageUrl to ensure correct URL format
-const fixedGetPublicImageUrl = (bucket: string, filePath: string): string => {
-  return `https://xfmdckbmohponiwalvli.supabase.co/storage/v1/object/public/${bucket}//${filePath}`;
-};
-
 export default function ActivitiesPage() {
   const [images, setImages] = useState<{ [key: string]: string }>({});
   const [activeSection, setActiveSection] = useState<string>("");
-  const [refresh, setRefresh] = useState(false); // Force re-render
 
   // Function to fetch images
   const fetchImages = async () => {
@@ -27,17 +21,14 @@ export default function ActivitiesPage() {
 
     for (const key in imageFiles) {
       try {
-        const url = fixedGetPublicImageUrl("activity-images", imageFiles[key]);
-        fetchedImages[key] = url || "/placeholder.svg";
+        fetchedImages[key] = getPublicImageUrl("activity-images", imageFiles[key]);
       } catch (error) {
         console.error(`Error fetching image ${key}:`, error);
         fetchedImages[key] = "/placeholder.svg";
       }
     }
 
-    console.log("Fetched Images:", fetchedImages); // Debugging log
     setImages(fetchedImages);
-    setRefresh((prev) => !prev); // Force re-render
   };
 
   // Fetch images on initial load
@@ -48,13 +39,12 @@ export default function ActivitiesPage() {
   // Listen for hash changes & update active section
   useEffect(() => {
     const updateActiveSection = () => {
-      const newHash = window.location.hash.substring(1); // Remove "#" from hash
+      const newHash = window.location.hash.substring(1);
       setActiveSection(newHash);
-      console.log("Active Section:", newHash); // Debugging log
     };
 
     window.addEventListener("hashchange", updateActiveSection);
-    updateActiveSection(); // Set initial state
+    updateActiveSection();
 
     return () => window.removeEventListener("hashchange", updateActiveSection);
   }, []);
@@ -74,10 +64,9 @@ export default function ActivitiesPage() {
                 increase awareness and encourage regular donations from healthy individuals.
               </p>
             </div>
-            <div className="relative w-full h-80 rounded-md overflow-hidden" style={{ borderRadius: "8px" }}>
+            <div className="relative w-full h-80 rounded-md overflow-hidden">
               {images["blood-donation"] ? (
                 <Image 
-                  key={refresh.toString()} 
                   src={images["blood-donation"]} 
                   alt="Blood Donation" 
                   fill 
@@ -85,7 +74,7 @@ export default function ActivitiesPage() {
                   style={{ borderRadius: "8px" }}
                 />
               ) : (
-                <div className="w-full h-full bg-gray-200 animate-pulse" style={{ borderRadius: "8px" }} />
+                <div className="w-full h-full bg-gray-200 animate-pulse" />
               )}
             </div>
           </div>
@@ -94,10 +83,9 @@ export default function ActivitiesPage() {
         {/* Food Truck Section */}
         <section id="food-truck" className="mb-24">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="relative w-full h-80 rounded-md overflow-hidden" style={{ borderRadius: "8px" }}>
+            <div className="relative w-full h-80 rounded-md overflow-hidden">
               {images["food-truck"] ? (
                 <Image 
-                  key={refresh.toString()} 
                   src={images["food-truck"]} 
                   alt="Food Truck" 
                   fill 
@@ -105,7 +93,7 @@ export default function ActivitiesPage() {
                   style={{ borderRadius: "8px" }}
                 />
               ) : (
-                <div className="w-full h-full bg-gray-200 animate-pulse" style={{ borderRadius: "8px" }} />
+                <div className="w-full h-full bg-gray-200 animate-pulse" />
               )}
             </div>
             <div>
@@ -128,10 +116,9 @@ export default function ActivitiesPage() {
                 performances to art exhibitions, these events offer a vibrant celebration of our culture.
               </p>
             </div>
-            <div className="relative w-full h-80 rounded-md overflow-hidden" style={{ borderRadius: "8px" }}>
+            <div className="relative w-full h-80 rounded-md overflow-hidden">
               {images["cultural-events"] ? (
                 <Image 
-                  key={refresh.toString()} 
                   src={images["cultural-events"]} 
                   alt="Cultural Events" 
                   fill 
@@ -139,7 +126,7 @@ export default function ActivitiesPage() {
                   style={{ borderRadius: "8px" }}
                 />
               ) : (
-                <div className="w-full h-full bg-gray-200 animate-pulse" style={{ borderRadius: "8px" }} />
+                <div className="w-full h-full bg-gray-200 animate-pulse" />
               )}
             </div>
           </div>

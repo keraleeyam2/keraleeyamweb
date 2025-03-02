@@ -10,7 +10,7 @@
 body {
   color: rgb(var(--foreground-rgb));
   background: rgb(var(--background-rgb));
-  zoom: 0.9;
+  zoom: 0.8;
 }
 
 .container {

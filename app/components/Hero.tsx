@@ -47,7 +47,7 @@ export default function Hero() {
       >
         <div className="relative w-full h-full">
           <Image
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/freepik__expand__95357-2QEVDqQ9XpKbHMlzcddX0PsI2NzLIU.png"
+            src="https://lfwraqlxvswwhdcwjuvz.supabase.co/storage/v1/object/public/hero//hero.png"
             alt="Keraleeyam Community Gathering"
             fill
             sizes="100vw"

@@ -71,11 +71,6 @@ export default function Header() {
             {pathname === "/" ? (
               <>
                 <li>
-                  <a href="#hero" onClick={scrollToHero} className="hover:text-gray-600 block">
-                    Home
-                  </a>
-                </li>
-                <li>
                   <a href="#activities" onClick={() => setIsMenuOpen(false)} className="hover:text-gray-600 block">
                     Activities
                   </a>
@@ -88,11 +83,6 @@ export default function Header() {
               </>
             ) : (
               <>
-                <li>
-                  <Link href="/" onClick={scrollToHero} className="hover:text-gray-600 block">
-                    Home
-                  </Link>
-                </li>
                 <li>
                   <Link href="/#activities" onClick={() => setIsMenuOpen(false)} className="hover:text-gray-600 block">
                     Activities
@@ -120,4 +110,3 @@ export default function Header() {
     </header>
   )
 }
-
