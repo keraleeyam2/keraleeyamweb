@@ -1,70 +1,75 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Image from "next/image";
-import { getPublicImageUrl, listImagesInBucket } from "@/lib/supabaseClient";
+import { ArrowLeft, ArrowRight } from "lucide-react"; // Importing icons
+
+const imageUrls = [
+  "https://lfwraqlxvswwhdcwjuvz.supabase.co/storage/v1/object/public/gallery//Class%20by%20Koshy%20Joseph.JPG",
+  "https://lfwraqlxvswwhdcwjuvz.supabase.co/storage/v1/object/public/gallery//Formation.jpeg",
+  "https://lfwraqlxvswwhdcwjuvz.supabase.co/storage/v1/object/public/gallery//Releif%20support%20to%20school-4.jpeg",
+  "https://lfwraqlxvswwhdcwjuvz.supabase.co/storage/v1/object/public/gallery//Republic%20Day%20lamp%20lighting.jpg",
+  "https://lfwraqlxvswwhdcwjuvz.supabase.co/storage/v1/object/public/gallery//Republic%20day.jpeg",
+  "https://lfwraqlxvswwhdcwjuvz.supabase.co/storage/v1/object/public/gallery//Malayalam%20mission.JPG"
+];
 
 export default function ImageGallery() {
-  const [imageUrls, setImageUrls] = useState<string[]>([]);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-  useEffect(() => {
-    async function fetchImages() {
-      try {
-        const images = await listImagesInBucket("gallery");
-        if (images.length > 0) {
-          const urls = images.map((file) => getPublicImageUrl("gallery", file));
-          setImageUrls(urls);
-        } else {
-          setImageUrls(["/placeholder.svg"]); // Fallback if no images found
-        }
-      } catch (error) {
-        console.error("Error fetching images:", error);
-        setImageUrls(["/placeholder.svg"]); // Fallback in case of error
-      }
-    }
-    fetchImages();
-  }, []);
+  const nextImage = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % imageUrls.length);
+  };
+
+  const prevImage = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? imageUrls.length - 1 : prevIndex - 1
+    );
+  };
 
   return (
-    <section className="py-20">
-      <div className="container px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl mb-4">Image Gallery</h2>
-          <p className="text-lg sm:text-xl text-gray-600">
-            Capturing moments that make a difference in our community.
-          </p>
-        </div>
+    <div className="relative flex flex-col items-center">
+      <h2 className="text-3xl text-center sm:text-4xl md:text-5xl mb-12">Image Gallery</h2>
+      <p className="text-center mb-6 text-lg">Capturing moments that make a difference in our community.</p>
 
-        {/* Dynamic Image Collage */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
-          {imageUrls.length > 0 && (
-            <>
-              <div className="md:col-span-7">
-                <div className="relative w-full h-[300px] sm:h-[400px] md:h-full rounded-lg overflow-hidden">
-                  <Image
-                    src={imageUrls[0] || "/placeholder.svg"}
-                    alt="Gallery Image 1"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-              </div>
-              <div className="md:col-span-5 grid grid-cols-2 md:grid-cols-1 gap-8">
-                {imageUrls.slice(1, 3).map((url, index) => (
-                  <div key={index} className="relative aspect-[4/3] rounded-lg overflow-hidden">
-                    <Image
-                      src={url}
-                      alt={`Gallery Image ${index + 2}`}
-                      fill
-                      className="object-cover hover:scale-105 transition-transform duration-300"
-                    />
-                  </div>
-                ))}
-              </div>
-            </>
-          )}
-        </div>
+      {/* Image Display with Increased Size */}
+      <div className="relative flex items-center justify-center w-[600px] h-[420px]">
+        {/* Left Arrow - Plain Black */}
+        <button
+          onClick={prevImage}
+          className="absolute left-[-50px] top-1/2 transform -translate-y-1/2"
+        >
+          <ArrowLeft size={32} stroke="black" />
+        </button>
+
+        {/* Image */}
+        <Image
+          src={imageUrls[currentIndex]}
+          alt={`Gallery image ${currentIndex + 1}`}
+          width={600} // Increased size
+          height={420} // Increased size
+          className="rounded-lg object-cover w-full h-full shadow-xl"
+        />
+
+        {/* Right Arrow - Plain Black */}
+        <button
+          onClick={nextImage}
+          className="absolute right-[-50px] top-1/2 transform -translate-y-1/2"
+        >
+          <ArrowRight size={32} stroke="black" />
+        </button>
       </div>
-    </section>
+
+      {/* Image Indicators */}
+      <div className="flex mt-4 space-x-2">
+        {imageUrls.map((_, index) => (
+          <span
+            key={index}
+            className={`w-3 h-3 rounded-full ${
+              currentIndex === index ? "bg-gray-800" : "bg-gray-400"
+            }`}
+          />
+        ))}
+      </div>
+    </div>
   );
 }

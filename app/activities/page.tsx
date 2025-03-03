@@ -58,10 +58,9 @@ export default function ActivitiesPage() {
         <section id="blood-donation" className="mb-24">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-4xl mb-4">Blood Donation</h2>
-              <p className="text-xl text-gray-600">
-                Blood donation is a vital community service that saves lives. Our blood donation drives aim to
-                increase awareness and encourage regular donations from healthy individuals.
+              <h2 className="text-4xl mb-4">Donations</h2>
+              <p className="text-xl text-gray-600 text-justify">
+              Our association is proud to have donated to a school in Wayanad that was severely affected by the recent floods. Through this contribution, we aim to support the rebuilding of infrastructure and provide essential resources for students, helping them get back to their education and regain a sense of normalcy. We are committed to making a positive impact in the lives of those affected by this disaster.
               </p>
             </div>
             <div className="relative w-full h-80 rounded-md overflow-hidden">
@@ -97,10 +96,9 @@ export default function ActivitiesPage() {
               )}
             </div>
             <div>
-              <h2 className="text-4xl mb-4">Food Truck</h2>
-              <p className="text-xl text-gray-600">
-                Our Food Truck initiative brings delicious, locally-sourced meals to various locations in the
-                community. We aim to promote local cuisine and provide convenient, quality food options.
+              <h2 className="text-4xl mb-4">Food Aid</h2>
+              <p className="text-xl text-gray-600 text-justify">
+              Every year, during the months of September and October, our association proudly donates food to those in need, supporting families and communities during this crucial time. This initiative is part of our ongoing commitment to fighting hunger and ensuring that no one goes without a meal. By providing essential food supplies, we aim to bring comfort and relief to those facing challenging circumstances, helping to make a difference in their lives.
               </p>
             </div>
           </div>
@@ -111,9 +109,8 @@ export default function ActivitiesPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-4xl mb-4">Cultural Events</h2>
-              <p className="text-xl text-gray-600">
-                Our Cultural Events showcase the rich heritage and traditions of Kerala. From music and dance
-                performances to art exhibitions, these events offer a vibrant celebration of our culture.
+              <p className="text-xl text-gray-600 text-justify">
+              Our association proudly celebrates Onam and Vishu, embracing the rich cultural traditions of our community, and honors Republic Day with patriotic spirit. These celebrations reflect our commitment to unity, culture, and national pride, bringing together members to share joy, traditions, and values that strengthen our bonds.
               </p>
             </div>
             <div className="relative w-full h-80 rounded-md overflow-hidden">
