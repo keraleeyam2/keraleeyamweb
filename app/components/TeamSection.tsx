@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { Linkedin, Twitter, Globe } from "lucide-react";
+import { Linkedin, Instagram, Globe } from "lucide-react";
 import { getPublicImageUrl } from "@/lib/supabaseClient";
 
 const teamMembers = [
@@ -13,9 +13,9 @@ const teamMembers = [
     // image: getPublicImageUrl("team", "Jimmy.jpg"),
     image: "https://lfwraqlxvswwhdcwjuvz.supabase.co/storage/v1/object/public/team//Jimmy.jpg",
     social: {
-      linkedin: "#",
-      twitter: "#",
-      website: "#",
+      linkedin: "https://www.linkedin.com/in/dr-jimmy-thomas-28ab551b",
+      Instagram: "https://www.instagram.com/drjimmythomasmundackal",
+      // website: "#",
     },
   },
   {
@@ -25,8 +25,8 @@ const teamMembers = [
     // image: getPublicImageUrl("team", "Hari.jpeg"),
     image: "https://lfwraqlxvswwhdcwjuvz.supabase.co/storage/v1/object/public/team//Hari.jpeg",
     social: {
-      linkedin: "#",
-      twitter: "#",
+      linkedin: "https://www.linkedin.com/in/dr-jimmy-thomas-28ab551b",
+      // Instagram: "#",
     },
   },
   {
@@ -36,9 +36,33 @@ const teamMembers = [
     // image: getPublicImageUrl("team", "Rajesh.jpeg"),
     image: "https://lfwraqlxvswwhdcwjuvz.supabase.co/storage/v1/object/public/team//Rajesh.jpeg",
     social: {
-      linkedin: "#",
-      twitter: "#",
-      website: "#",
+      linkedin: "https://www.linkedin.com/in/dr-jimmy-thomas-28ab551b",
+      // Instagram: "#",
+      // website: "#",
+    },
+  },
+  {
+    name: "Jobin Augustine",
+    title: "Treasurer",
+    description: "Passionate about preserving and promoting Kerala's rich cultural heritage through various events.",
+    // image: getPublicImageUrl("team", "Rajesh.jpeg"),
+    image: "https://lfwraqlxvswwhdcwjuvz.supabase.co/storage/v1/object/public/team//Jobin.jpeg",
+    social: {
+      linkedin: "https://www.linkedin.com/in/dr-jimmy-thomas-28ab551b",
+      // Instagram: "#",
+      // website: "#",
+    },
+  },
+  {
+    name: "Divya Catherine",
+    title: "Joint Treasurer",
+    description: "Passionate about preserving and promoting Kerala's rich cultural heritage through various events.",
+    // image: getPublicImageUrl("team", "Rajesh.jpeg"),
+    image: "https://lfwraqlxvswwhdcwjuvz.supabase.co/storage/v1/object/public/team//Divya.jpeg",
+    social: {
+      linkedin: "https://www.linkedin.com/in/dr-jimmy-thomas-28ab551b",
+      // Instagram: "#",
+      // website: "#",
     },
   },
 ];
@@ -61,7 +85,7 @@ export default function TeamSection() {
         <p className="text-lg text-gray-600 mb-16">Meet the amazing people behind our initiatives.</p>
 
         <div className="relative">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {teamMembers.slice(currentSlide, currentSlide + 4).map((member, index) => (
               <div key={index} className="transition-opacity duration-300">
                 <div className="mb-6">
@@ -78,16 +102,16 @@ export default function TeamSection() {
                 <div className="text-center">
                   <h3 className="text-lg font-semibold">{member.name}</h3>
                   <p className="text-sm text-gray-600 mb-4">{member.title}</p>
-                  {/* <p className="text-sm text-gray-600 mb-4">{member.description}</p>
+                  {/* <p className="text-sm text-gray-600 mb-4">{member.description}</p> */}
                   <div className="flex gap-4 justify-center">
                     {member.social.linkedin && (
                       <a href={member.social.linkedin} className="text-gray-600 hover:text-gray-900">
                         <Linkedin className="w-5 h-5" />
                       </a>
                     )}
-                    {member.social.twitter && (
-                      <a href={member.social.twitter} className="text-gray-600 hover:text-gray-900">
-                        <Twitter className="w-5 h-5" />
+                    {member.social.Instagram && (
+                      <a href={member.social.Instagram} className="text-gray-600 hover:text-gray-900">
+                        <Instagram className="w-5 h-5" />
                       </a>
                     )}
                     {member.social.website && (
@@ -95,7 +119,7 @@ export default function TeamSection() {
                         <Globe className="w-5 h-5" />
                       </a>
                     )}
-                  </div> */}
+                  </div>
                 </div>
               </div>
             ))}
@@ -113,7 +137,7 @@ export default function TeamSection() {
                 />
               ))}
             </div>
-            {/* <div className="flex gap-4">
+            <div className="flex gap-4">
               <button
                 onClick={prevSlide}
                 className="p-2 rounded-full border border-gray-200 hover:bg-gray-50 transition-colors"
@@ -126,7 +150,7 @@ export default function TeamSection() {
               >
                 &#9655;
               </button>
-            </div> */}
+            </div>
           </div>
         </div>
       </div>
