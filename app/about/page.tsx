@@ -23,12 +23,11 @@ export default function AboutUs() {
         </div>
         <div className="w-full max-w-none text-left">
           <p className="text-base sm:text-lg mb-6">
-            Keraleeyam is a community-driven initiative that aims to celebrate and promote the rich culture and heritage
-            of Kerala. Our mission is to bring people together through various activities and events that showcase the
-            best of Kerala's traditions, cuisine, and arts.
+          Keraleeyam-the Malayali Association of Prestige Jindal City is the socio-cultural organisation of the malayali families, located near Tumkur Road, Nagasandra, Bangalore. Our mission is to bring people together through various activities and events that showcase the
+          best of Kerala's traditions, cuisine, and arts.
           </p>
           <p className="text-base sm:text-lg mb-6">
-            Founded in 2023, we have been working tirelessly to create meaningful experiences for our community members
+            Keraleeyam was formed about 100 families living in PJC and was inaugurated on 08 June 2024 under the leadership of Dr Jimmy Thomas as President and Mr Rajesh Vettamthody as Secretary along with a 21 member Executive Committee. we have been working tirelessly to create meaningful experiences for our community members
             and visitors alike. Through our blood donation drives, food truck initiatives, and cultural events, we
             strive to make a positive impact on society while preserving and sharing our cultural identity.
           </p>
@@ -39,7 +38,7 @@ export default function AboutUs() {
         </div>
       </div>
 
-      {/* <TeamSection /> */}
+      <TeamSection />
     </div>
   );
 }

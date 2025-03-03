@@ -1,13 +1,8 @@
-import Link from 'next/link'
-
 export default function Footer() {
   const socialLinks = [
-    { name: 'YouTube', href: '#' },
-    { name: 'LinkedIn', href: '#' },
-    { name: 'Twitter', href: '#' },
-    { name: 'Facebook', href: '#' },
-    { name: 'Instagram', href: '#' },
-    { name: 'Dribbble', href: '#' }
+    { name: 'YouTube', href: 'https://youtube.com/@keraleeyam-c1d?si=TSRSvVIQCnYQU4qS' },
+    { name: 'Facebook', href: 'https://www.facebook.com/share/1CZczq5RXL/?mibextid=wwXIfr' },
+    { name: 'Instagram', href: 'https://www.instagram.com/pjc_keraleeyam?igsh=bjd6MnYxN3BsOG8w' },
   ]
 
   return (
@@ -19,12 +14,14 @@ export default function Footer() {
             <ul className="flex justify-center gap-8">
               {socialLinks.map((link, index) => (
                 <li key={index}>
-                  <Link
+                  <a
                     href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-gray-600 hover:text-gray-900 transition-colors"
                   >
                     {link.name}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>
@@ -37,4 +34,3 @@ export default function Footer() {
     </footer>
   )
 }
-

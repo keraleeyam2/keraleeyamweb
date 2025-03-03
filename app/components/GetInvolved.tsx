@@ -25,9 +25,9 @@ export default function GetInvolved() {
       await new Promise((resolve) => setTimeout(resolve, 1000))
 
       // For demonstration purposes, we'll randomly succeed or fail
-      if (Math.random() > 0.5) {
-        throw new Error("Something went wrong")
-      }
+      // if (Math.random() > 0.5) {
+      //   throw new Error("Something went wrong")
+      // }
 
       setSuccessMessage("Thank you for your interest! We'll be in touch soon.")
       setFormData({ name: "", email: "", message: "" })

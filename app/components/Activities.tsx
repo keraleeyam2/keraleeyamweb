@@ -19,8 +19,8 @@ export default function Activities() {
   useEffect(() => {
     const fetchImages = async () => {
       const activityData = [
-        { title: "Blood Donation", path: "blood-donation.jpg", link: "/activities#blood-donation" },
-        { title: "Food Truck", path: "foodtruck.jpg", link: "/activities#food-truck" },
+        { title: "Donations", path: "Donations.jpeg", link: "/activities#blood-donation" },
+        { title: "Food Aid", path: "FoodAid.jpeg", link: "/activities#food-truck" },
         { title: "Cultural Events", path: "cultural-events.jpg", link: "/activities#cultural-events" },
       ];
 

@@ -8,10 +8,11 @@ import { motion } from "framer-motion";
 const partnerLogos = [
   "https://lfwraqlxvswwhdcwjuvz.supabase.co/storage/v1/object/public/sponsors//bhima.png",
   "https://lfwraqlxvswwhdcwjuvz.supabase.co/storage/v1/object/public/sponsors//prestige.png",
-  "https://lfwraqlxvswwhdcwjuvz.supabase.co/storage/v1/object/public/sponsors//honda.jpeg",
+  "https://lfwraqlxvswwhdcwjuvz.supabase.co/storage/v1/object/public/sponsors//Godrej.png",
   "https://lfwraqlxvswwhdcwjuvz.supabase.co/storage/v1/object/public/sponsors//justbake.png",
-  // "https://example.com/logo5.png",
-  // "https://example.com/logo6.png",
+  "https://lfwraqlxvswwhdcwjuvz.supabase.co/storage/v1/object/public/sponsors//Bosch.png",
+  "https://lfwraqlxvswwhdcwjuvz.supabase.co/storage/v1/object/public/sponsors//IFB.png",
+  "https://lfwraqlxvswwhdcwjuvz.supabase.co/storage/v1/object/public/sponsors//manipalHospitals.png"
 ];
 
 export default function Partners() {

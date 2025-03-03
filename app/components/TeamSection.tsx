@@ -7,10 +7,11 @@ import { getPublicImageUrl } from "@/lib/supabaseClient";
 
 const teamMembers = [
   {
-    name: "Dr. Aisha Patel",
-    title: "Medical Director",
+    name: "Dr. Jimmy Thomas",
+    title: "President",
     description: "Experienced physician specializing in community health initiatives and blood donation programs.",
-    image: getPublicImageUrl("team", "member1.jpg"),
+    // image: getPublicImageUrl("team", "Jimmy.jpg"),
+    image: "https://lfwraqlxvswwhdcwjuvz.supabase.co/storage/v1/object/public/team//Jimmy.jpg",
     social: {
       linkedin: "#",
       twitter: "#",
@@ -18,20 +19,22 @@ const teamMembers = [
     },
   },
   {
-    name: "Chef Raj Kumar",
-    title: "Culinary Lead",
+    name: "Harikrishnan Mangot",
+    title: "Vice President",
     description: "Master chef with expertise in traditional Kerala cuisine, leading our food truck program.",
-    image: getPublicImageUrl("team", "member2.jpg"),
+    // image: getPublicImageUrl("team", "Hari.jpeg"),
+    image: "https://lfwraqlxvswwhdcwjuvz.supabase.co/storage/v1/object/public/team//Hari.jpeg",
     social: {
       linkedin: "#",
       twitter: "#",
     },
   },
   {
-    name: "Meera Nair",
-    title: "Cultural Events Coordinator",
+    name: "Rajesh Vettamthody",
+    title: "Scretary",
     description: "Passionate about preserving and promoting Kerala's rich cultural heritage through various events.",
-    image: getPublicImageUrl("team", "member3.jpg"),
+    // image: getPublicImageUrl("team", "Rajesh.jpeg"),
+    image: "https://lfwraqlxvswwhdcwjuvz.supabase.co/storage/v1/object/public/team//Rajesh.jpeg",
     social: {
       linkedin: "#",
       twitter: "#",
@@ -75,7 +78,7 @@ export default function TeamSection() {
                 <div className="text-center">
                   <h3 className="text-lg font-semibold">{member.name}</h3>
                   <p className="text-sm text-gray-600 mb-4">{member.title}</p>
-                  <p className="text-sm text-gray-600 mb-4">{member.description}</p>
+                  {/* <p className="text-sm text-gray-600 mb-4">{member.description}</p>
                   <div className="flex gap-4 justify-center">
                     {member.social.linkedin && (
                       <a href={member.social.linkedin} className="text-gray-600 hover:text-gray-900">
@@ -92,7 +95,7 @@ export default function TeamSection() {
                         <Globe className="w-5 h-5" />
                       </a>
                     )}
-                  </div>
+                  </div> */}
                 </div>
               </div>
             ))}
@@ -110,7 +113,7 @@ export default function TeamSection() {
                 />
               ))}
             </div>
-            <div className="flex gap-4">
+            {/* <div className="flex gap-4">
               <button
                 onClick={prevSlide}
                 className="p-2 rounded-full border border-gray-200 hover:bg-gray-50 transition-colors"
@@ -123,7 +126,7 @@ export default function TeamSection() {
               >
                 &#9655;
               </button>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
